@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <productlabels>
+            <general>
+                <enableproductlabels>1</enableproductlabels>
+                <displaynew>1</displaynew>
+                <newcolor>ffcc00</newcolor>
+                <displaysale>1</displaysale>
+                <salecolor>ff3385</salecolor>
+                <displayonline>1</displayonline>
+                <onlinecolor>00e6ac</onlinecolor>
+                <displaylimited>1</displaylimited>
+                <limitedcolor>66b3ff</limitedcolor>
+            </general>
+        </productlabels>
+    </default>
+</config>

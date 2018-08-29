@@ -1,0 +1,70 @@
+<?php if ($this->isBlockEnabled() === true): ?>
+
+    <div class="labels-container">
+        <ul class="label-container">
+            <?php if($this->isProductLimitedEdition() === true && $this->isLimitedEnabled() === true): ?>
+                <li class="label-item"><span class="label limited">Limited Edition</span></li>
+            <?php endif ?>
+            <?php if($this->isProductOnlineExclusive() === true && $this->isOnlineEnabled() === true): ?>
+                <li class="label-item"><span class="label online">Online Exclusive</span></li>
+            <?php endif ?>
+
+            <?php $this->getProductChildren() ?>
+
+            <?php if($this->isProductNew() === true && $this->isNewEnabled() === true): ?>
+                <li class="label-item"><span class="label new">New</span></li>
+            <?php endif ?>
+            <?php if($this->isProductOnSale() === true && $this->isSaleEnabled() === true): ?>
+                <li class="label-item"><span class="label sale"><?php echo 'Up to ' . $this->getProductDiscountAmount() . '% Off'; ?></span></li>
+            <?php endif ?>
+        </ul>
+    </div>
+
+<?php endif; ?>
+
+<style>
+    .labels-container {
+        position: absolute;
+        z-index: 10;
+    }
+    .labels-container .label-container {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+    }
+    .labels-container .label-item {
+        margin: 0px;
+        margin-bottom: 9px;
+    }
+    .labels-container .label {
+        border: 1px solid rgb(218, 218, 218);
+        padding: 5px;
+        background-color: rgb(240, 240, 240);
+        color: rgb(148, 148, 148);
+        margin:0px;
+        float:left;
+        width: 106px;
+        text-align:center;
+    }
+    .labels-container .new {
+        background-color: #<?php echo $this->getNewColor(); ?>;
+        color: rgb(0, 0, 0);
+        border: 0px;
+    }
+    .labels-container .sale {
+        background-color: #<?php echo $this->getSaleColor(); ?>;
+        color: rgb(0, 0, 0);
+        border: 0px;
+    }
+    .labels-container .limited {
+        background-color: #<?php echo $this->getLimitedColor(); ?>;
+        color: rgb(0, 0, 0);
+        border: 0px;
+    }
+    .labels-container .online {
+        background-color: #<?php echo $this->getOnlineColor(); ?>;
+        color: rgb(0, 0, 0);
+        border: 0px;
+    }
+</style>
+
